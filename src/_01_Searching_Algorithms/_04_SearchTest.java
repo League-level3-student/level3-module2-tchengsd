@@ -10,7 +10,9 @@ class _04_SearchTest {
 	String[] lTest1 = {"a","b","c","d","e"};
 	String[] lTest2 = {"Adam","Bob","Carl","Dylan","Evan"};
 	int[] bTest1 = {3, 5, 9, 17, 30};
-	int[] bTest2 = {6, 12, 14, 19, 24};
+	int[] bTest2 = {6, 12, 14, 19, 24, 28};
+	int[] iTest1 = {4, 8, 12, 16, 20, 24};
+	int[] iTest2 = {7, 14, 21, 28, 35};
 	
 	
 	@Test
@@ -27,20 +29,28 @@ class _04_SearchTest {
 		new _01_BinarySearch();
 		//2. use the assertEquals method to test your binary search method.
 		//   remember that the array must be sorted
-		assertEquals(2, _01_BinarySearch.binarySearch(bTest1,0,40,5));
-		assertEquals(-1, _01_BinarySearch.binarySearch(bTest1,0,40,23));
-		assertEquals(0, _01_BinarySearch.binarySearch(bTest2,0,40,6));
+		assertEquals(1, _01_BinarySearch.binarySearch(bTest1,0,4,5));
+		assertEquals(-1, _01_BinarySearch.binarySearch(bTest1,0,4,23));
+		assertEquals(0, _01_BinarySearch.binarySearch(bTest2,0,5,6));
 	}
 	
 	@Test
 	public void testInterpolationSearch() {
+		new _02_InterpolationSearch();
 		//3. use the assertEquals method to test your interpolation search method.
 		//   remember that the array must be sorted and evenly distributed
+		assertEquals(4, _02_InterpolationSearch.interpolationSearch(iTest1, 20));
+		assertEquals(-1, _02_InterpolationSearch.interpolationSearch(iTest1, 13));
+		assertEquals(2, _02_InterpolationSearch.interpolationSearch(iTest2, 21));
 	}
 	
 	@Test
 	public void testExponentialSearch() {
 		//4. use the assertEquals method to test your exponential search method.
 		//   remember that the array must be sorted
+		new _03_ExponentialSearch();
+		assertEquals(1, _03_ExponentialSearch.exponentialSearch(bTest1,5));
+		assertEquals(-1, _03_ExponentialSearch.exponentialSearch(bTest1,23));
+		assertEquals(0, _03_ExponentialSearch.exponentialSearch(bTest2,6));
 	}
 }
