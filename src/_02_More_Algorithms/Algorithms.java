@@ -82,4 +82,20 @@ public class Algorithms {
 		}
 		return sequences;
 	}
+	
+	public static List<String> sortWords(List<String> words){
+		boolean swap = true;
+		while (swap) {
+			swap = false;
+			for (int i = 0; i < words.size() - 1; i++) {
+				if (words.get(i).compareTo(words.get(i+1)) > 0) {
+					String l = words.get(i);
+					words.set(i, words.get(i + 1));
+					words.set(i + 1, l);
+					swap = true;
+				}
+			}
+		}
+		return words;
+	}
 }
